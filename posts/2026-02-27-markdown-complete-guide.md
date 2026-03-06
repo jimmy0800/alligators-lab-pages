@@ -5,7 +5,7 @@ tags: Markdown, 文檔, 寫作技巧
 image: /static/images/black-white-illustration.png
 ---
 
-![Markdown 指南](/static/images/black-white-illustration.png)
+
 
 
 
@@ -13,6 +13,7 @@ image: /static/images/black-white-illustration.png
 
 Markdown 不僅僅是「標記語言」，它是現代數位寫作的**通用貨幣**。無論你是要寫程式文件、個人筆記（Obsidian/Notion），還是發佈部落格，掌握 Markdown 都能讓你實現「手不離鍵盤」的高效創作。
 
+![Markdown 指南](/static/images/black-white-illustration.png)
 ---
 
 

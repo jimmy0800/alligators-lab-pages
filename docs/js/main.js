@@ -7,18 +7,13 @@
 let allPosts = [];
 let currentCategory = 'all';
 
-// 動態檢測基礎路徑
-const basePath = window.location.pathname.includes('/alligators-lab-pages/') 
-  ? '/alligators-lab-pages' 
-  : '';
-
 /**
  * 初始化首頁
  */
 async function initHomePage() {
   try {
-    // 加載文章清單
-    const response = await fetch(basePath + '/index.json');
+    // 加載文章清單（使用相對路徑）
+    const response = await fetch('./index.json');
     if (!response.ok) {
       throw new Error('無法加載文章清單');
     }
@@ -65,7 +60,7 @@ function createPostCard(post) {
     day: '2-digit'
   });
   
-  const heroImage = post.hero ? `${basePath}/assets/images/${post.hero}` : `${basePath}/assets/images/404.jpeg`;
+  const heroImage = post.hero ? `./assets/images/${post.hero}` : `./assets/images/404.jpeg`;
   const excerpt = post.excerpt || post.content.substring(0, 150).replace(/<[^>]*>/g, '') + '...';
   const tags = (post.tags || []).map(tag => 
     `<span class="post-card-tag">${tag}</span>`
@@ -73,7 +68,7 @@ function createPostCard(post) {
   
   return `
     <div class="post-card">
-      <img src="${heroImage}" alt="${post.title}" class="post-card-image" onerror="this.src='${basePath}/assets/images/404.jpeg'">
+      <img src="${heroImage}" alt="${post.title}" class="post-card-image" onerror="this.src='./assets/images/404.jpeg'">
       <div class="post-card-content">
         <span class="post-card-category">${getCategoryLabel(post.category)}</span>
         <h3 class="post-card-title">${escapeHtml(post.title)}</h3>
@@ -84,7 +79,7 @@ function createPostCard(post) {
         <div class="post-card-tags">
           ${tags}
         </div>
-        <a href="${basePath}/post.html?id=${post.id}" class="post-card-link">閱讀更多 →</a>
+        <a href="./post.html?id=${post.id}" class="post-card-link">閱讀更多 →</a>
       </div>
     </div>
   `;

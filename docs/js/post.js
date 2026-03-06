@@ -3,11 +3,6 @@
  * 動態加載和渲染 Markdown 文章
  */
 
-// 動態檢測基礎路徑
-const basePath = window.location.pathname.includes('/alligators-lab-pages/') 
-  ? '/alligators-lab-pages' 
-  : '';
-
 // 配置 marked.js
 marked.setOptions({
   breaks: true,
@@ -44,10 +39,10 @@ async function initPostPage() {
       throw new Error('未指定文章 ID');
     }
     
-    // 加載文章清單
-    const response = await fetch(basePath + '/index.json');
+    // 加載文章清單（使用相對路徑）
+    const response = await fetch('./index.json');
     if (!response.ok) {
-      throw new Error('無法加載文章清單');
+      throw new Error(`無法加載文章清單: ${response.status}`);
     }
     
     const allPosts = await response.json();
@@ -95,7 +90,7 @@ async function renderPost(post) {
   // 顯示 Hero 圖片
   if (post.hero) {
     const heroImg = document.getElementById('post-hero');
-    heroImg.src = `${basePath}/assets/images/${post.hero}`;
+    heroImg.src = `./assets/images/${post.hero}`;
     heroImg.alt = post.title;
     heroImg.style.display = 'block';
   }
@@ -103,7 +98,7 @@ async function renderPost(post) {
   // 渲染 Markdown 內容
   let htmlContent = marked(post.content);
   // 修復 Markdown 中的相對路徑
-  htmlContent = htmlContent.replace(/src="\/(?!alligators-lab-pages)/g, `src="${basePath}/`);
+  htmlContent = htmlContent.replace(/src="\/static\/images\//g, 'src="./assets/images/');
   document.getElementById('post-content').innerHTML = htmlContent;
   
   // 高亮代碼塊

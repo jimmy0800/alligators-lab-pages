@@ -7,13 +7,18 @@
 let allPosts = [];
 let currentCategory = 'all';
 
+// 動態檢測基礎路徑
+const basePath = window.location.pathname.includes('/alligators-lab-pages/') 
+  ? '/alligators-lab-pages' 
+  : '';
+
 /**
  * 初始化首頁
  */
 async function initHomePage() {
   try {
     // 加載文章清單
-    const response = await fetch('/posts/index.json');
+    const response = await fetch(basePath + '/posts/index.json');
     if (!response.ok) {
       throw new Error('無法加載文章清單');
     }
@@ -79,7 +84,7 @@ function createPostCard(post) {
         <div class="post-card-tags">
           ${tags}
         </div>
-        <a href="/post.html?id=${post.id}" class="post-card-link">閱讀更多 →</a>
+        <a href="${basePath}/post.html?id=${post.id}" class="post-card-link">閱讀更多 →</a>
       </div>
     </div>
   `;

@@ -45,7 +45,7 @@ async function initPostPage() {
     }
     
     // 加載文章清單
-    const response = await fetch(basePath + '/posts/index.json');
+    const response = await fetch(basePath + '/index.json');
     if (!response.ok) {
       throw new Error('無法加載文章清單');
     }

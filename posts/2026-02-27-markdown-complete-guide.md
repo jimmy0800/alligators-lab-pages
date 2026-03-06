@@ -1,5 +1,5 @@
 ---
-title: Markdown 完全指南：從入門到精通
+title: Mark完全指南：從入門到精通
 category: tech-logs
 tags: Markdown, 文檔, 寫作技巧
 image: /static/images/black-white-illustration.png

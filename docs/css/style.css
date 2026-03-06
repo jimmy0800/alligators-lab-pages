@@ -1,0 +1,670 @@
+/* ============================================
+   下水道實驗室 | Alligator's Lab
+   暗色主題 - 護眼設計
+   Industrial/Tech Aesthetic with Dark Mode
+   ============================================ */
+
+:root {
+  /* 色彩系統 - 暗色主題 */
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #252525;
+  
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  
+  /* 強調色 - 工業風霓虹 */
+  --accent-green: #00ff88;
+  --accent-blue: #00d4ff;
+  --accent-purple: #b000ff;
+  --accent-red: #ff3333;
+  
+  /* 邊框和分隔線 */
+  --border-color: #333333;
+  --border-light: #404040;
+  
+  /* 陰影 */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  
+  /* 字體 */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  
+  /* 間距 */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+}
+
+/* ============================================
+   全域樣式
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================
+   排版
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-2xl);
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+}
+
+h4, h5, h6 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--accent-green);
+  border-bottom-color: var(--accent-green);
+}
+
+code {
+  background-color: var(--bg-tertiary);
+  color: var(--accent-green);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-lg);
+}
+
+pre code {
+  background-color: transparent;
+  color: var(--text-primary);
+  padding: 0;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent-green);
+  padding-left: var(--spacing-lg);
+  margin-left: 0;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* ============================================
+   容器和佈局
+   ============================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.container-narrow {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* ============================================
+   導航欄
+   ============================================ */
+
+header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-xl);
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent-green);
+}
+
+/* ============================================
+   首頁 - 文章卡片列表
+   ============================================ */
+
+.hero {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border-bottom: 2px solid var(--border-light);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.post-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.post-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--bg-tertiary);
+}
+
+.post-card-content {
+  padding: var(--spacing-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-category {
+  display: inline-block;
+  background-color: var(--bg-tertiary);
+  color: var(--accent-green);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-sm);
+  width: fit-content;
+}
+
+.post-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.post-card-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.post-card-excerpt {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.post-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.post-card-tag {
+  background-color: var(--bg-tertiary);
+  color: var(--accent-blue);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.post-card-link {
+  display: inline-block;
+  color: var(--accent-green);
+  font-weight: 700;
+  margin-top: auto;
+  transition: all 0.3s ease;
+}
+
+.post-card-link:hover {
+  color: var(--accent-blue);
+  transform: translateX(4px);
+}
+
+/* ============================================
+   分類篩選
+   ============================================ */
+
+.category-filter {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-btn {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background-color: var(--accent-blue);
+  color: var(--bg-primary);
+  border-color: var(--accent-blue);
+}
+
+/* ============================================
+   文章頁面
+   ============================================ */
+
+.post-header {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  border-bottom: 2px solid var(--border-light);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.post-header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.post-meta {
+  display: flex;
+  gap: var(--spacing-lg);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.post-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.post-hero-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: var(--spacing-2xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: var(--spacing-lg) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-lg);
+}
+
+.post-content th,
+.post-content td {
+  border: 1px solid var(--border-light);
+  padding: var(--spacing-md);
+  text-align: left;
+}
+
+.post-content th {
+  background-color: var(--bg-tertiary);
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+/* ============================================
+   文章導航
+   ============================================ */
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-2xl);
+  padding: var(--spacing-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+}
+
+.post-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--accent-green);
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.post-nav-btn:hover {
+  color: var(--accent-blue);
+  transform: translateX(4px);
+}
+
+.post-nav-btn.back:hover {
+  transform: translateX(-4px);
+}
+
+/* ============================================
+   評論區 (Giscus)
+   ============================================ */
+
+.comments-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+}
+
+.comments-section h2 {
+  margin-top: 0;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: var(--spacing-md);
+}
+
+/* ============================================
+   頁尾
+   ============================================ */
+
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+footer .container {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+footer p {
+  margin-bottom: var(--spacing-md);
+}
+
+footer a {
+  color: var(--accent-blue);
+}
+
+footer a:hover {
+  color: var(--accent-green);
+}
+
+/* ============================================
+   響應式設計
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .post-header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+
+  .post-nav {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .post-nav-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  .posts-container {
+    gap: var(--spacing-lg);
+  }
+
+  .post-card-image {
+    height: 150px;
+  }
+}
+
+/* ============================================
+   工具類
+   ============================================ */
+
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.mt-lg {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+
+.p-lg {
+  padding: var(--spacing-lg);
+}
+
+/* ============================================
+   MathJax 和 Mermaid 支持
+   ============================================ */
+
+.math {
+  display: inline-block;
+}
+
+.math.block {
+  display: block;
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}

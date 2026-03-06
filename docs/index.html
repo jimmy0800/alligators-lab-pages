@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="下水道實驗室 - 一個專注於 3C 技術、硬體拆解和技術思考的部落格">
+  <meta name="keywords" content="技術部落格, 硬體拆解, 3C評測, 技術分享">
+  <meta name="author" content="Alligator">
+  
+  <title>下水道實驗室 | Alligator's Lab</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2300ff88'>🐊</text></svg>">
+</head>
+<body>
+  <!-- 導航欄 -->
+  <header>
+    <nav>
+      <a href="/" class="logo">🐊 Alligator's Lab</a>
+      <ul class="nav-links">
+        <li><a href="#posts">文章</a></li>
+        <li><a href="#about">關於</a></li>
+        <li><a href="https://github.com/jimmy0800/alligators-lab-pages" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主內容 -->
+  <main>
+    <!-- 英雄區 -->
+    <section class="hero">
+      <div class="container">
+        <h1>下水道實驗室</h1>
+        <p>探索技術的深度 | 拆解設備的秘密 | 分享生活的思考</p>
+      </div>
+    </section>
+
+    <!-- 分類篩選 -->
+    <section class="container">
+      <div class="category-filter">
+        <button class="category-btn active" data-category="all">全部文章</button>
+        <button class="category-btn" data-category="tech-logs">滲透紀錄</button>
+        <button class="category-btn" data-category="device-analysis">樣本拆解</button>
+        <button class="category-btn" data-category="life-thoughts">生活碎念</button>
+      </div>
+    </section>
+
+    <!-- 文章列表 -->
+    <section id="posts" class="container">
+      <div class="posts-container" id="posts-list">
+        <!-- 動態生成的文章卡片 -->
+      </div>
+    </section>
+
+    <!-- 關於區 -->
+    <section id="about" class="container-narrow" style="margin-bottom: var(--spacing-2xl); padding: var(--spacing-2xl) var(--spacing-lg);">
+      <h2>關於本站</h2>
+      <p>歡迎來到下水道實驗室！這是一個專注於技術分享、硬體拆解和生活思考的部落格。</p>
+      <p>在這裡，我們深入探討各種技術話題，拆解有趣的電子設備，並分享技術人的日常思考。</p>
+      <p><strong>工作流程很簡單：</strong>只需在 <code>posts/</code> 資料夾中添加 Markdown 檔案，GitHub Actions 會自動生成 HTML 並更新首頁。</p>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Alligator's Lab. 保留所有權利。</p>
+      <p>由 GitHub Pages 驅動 | <a href="https://github.com/jimmy0800/alligators-lab-pages">查看源代碼</a></p>
+    </div>
+  </footer>
+
+  <!-- 動態加載文章列表的腳本 -->
+  <script src="js/main.js"></script>
+</body>
+</html>

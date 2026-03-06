@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="下水道實驗室 - 文章頁面">
+  
+  <title>下水道實驗室 | Alligator's Lab</title>
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2300ff88'>🐊</text></svg>">
+  
+  <!-- MathJax 支持 LaTeX 公式 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <!-- Mermaid 支持圖表 -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+  
+  <!-- Marked.js 用於解析 Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@11/marked.min.js"></script>
+  
+  <!-- Highlight.js 用於代碼高亮 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+  <!-- 導航欄 -->
+  <header>
+    <nav>
+      <a href="/" class="logo">🐊 Alligator's Lab</a>
+      <ul class="nav-links">
+        <li><a href="/">首頁</a></li>
+        <li><a href="/#posts">文章</a></li>
+        <li><a href="https://github.com/jimmy0800/alligators-lab-pages" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 主內容 -->
+  <main>
+    <!-- 文章頭部 -->
+    <section class="post-header">
+      <div class="post-header-content">
+        <h1 id="post-title">文章標題</h1>
+        <div class="post-meta">
+          <div class="post-meta-item">
+            <span>📅</span>
+            <span id="post-date">日期</span>
+          </div>
+          <div class="post-meta-item">
+            <span>📁</span>
+            <span id="post-category">分類</span>
+          </div>
+          <div class="post-meta-item">
+            <span>🏷️</span>
+            <span id="post-tags">標籤</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero 圖片 -->
+    <div class="container-narrow">
+      <img id="post-hero" class="post-hero-image" alt="文章 Hero 圖" style="display: none;">
+    </div>
+
+    <!-- 文章內容 -->
+    <article class="post-content container-narrow" id="post-content">
+      <!-- 動態生成的文章內容 -->
+    </article>
+
+    <!-- 文章導航 -->
+    <div class="post-nav container-narrow">
+      <a href="/" class="post-nav-btn back">← 返回首頁</a>
+      <a href="/#posts" class="post-nav-btn">查看更多文章 →</a>
+    </div>
+
+    <!-- 評論區 -->
+    <section class="comments-section container-narrow">
+      <h2>評論</h2>
+      <div id="giscus-container"></div>
+    </section>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Alligator's Lab. 保留所有權利。</p>
+      <p>由 GitHub Pages 驅動 | <a href="https://github.com/jimmy0800/alligators-lab-pages">查看源代碼</a></p>
+    </div>
+  </footer>
+
+  <!-- 文章頁面邏輯 -->
+  <script src="/js/post.js"></script>
+</body>
+</html>
